@@ -1,0 +1,25 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "八月自定义调试",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}\\build\\Debug\\elements.exe",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "D:\\Program\\Qt\\Tools\\mingw1120_64\\bin",
+            "environment": [],
+            "externalConsole": true,
+            "MIMode": "gdb",
+            "miDebuggerPath": "D:\\Program\\Qt\\Tools\\mingw1120_64\\bin\\gdb.exe",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+        }
+    ]
+}
