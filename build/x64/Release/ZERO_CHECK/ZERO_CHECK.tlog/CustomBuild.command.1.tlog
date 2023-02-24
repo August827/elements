@@ -1,0 +1,10 @@
+^E:\VSCODE_ELEMENTSEDIT\ELEMENTS\BUILD\CMAKEFILES\9999E8470AE2A19C07CB61C4B8740E75\GENERATE.STAMP.RULE
+setlocal
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -SE:/Vscode_elementsEdit/elements -BE:/Vscode_elementsEdit/elements/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file E:/Vscode_elementsEdit/elements/build/elements.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

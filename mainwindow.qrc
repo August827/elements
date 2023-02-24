@@ -1,0 +1,9 @@
+<RCC>
+  <qresource>
+    <file>build/Debug/interface/icon/Icons.ico</file>
+    <file>build/Debug/interface/icon/ToolBar_InRegardTo.png</file>
+    <file>build/Debug/interface/icon/ToolBar_open.png</file>
+    <file>build/Debug/interface/icon/ToolBar_Save.png</file>
+    <file>build/Debug/interface/icon/ToolBar_Ver.png</file>
+  </qresource>
+</RCC>

@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\mocs_compilation_Debug.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\subassembly\subassembly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\EWIEGA46WW\qrc_mainwindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\mocs_compilation_Release.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\mocs_compilation_MinSizeRel.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\mocs_compilation_RelWithDebInfo.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\subassembly\subassembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_Debug\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_Debug\subassembly\ui_subassembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_Release\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_Release\subassembly\ui_subassembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_MinSizeRel\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_MinSizeRel\subassembly\ui_subassembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_RelWithDebInfo\ui_mainwindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\include_RelWithDebInfo\subassembly\ui_subassembly.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="E:\Vscode_elementsEdit\elements\build\CMakeFiles\7d468c101b2de1a9b8a971b96a5f1d6e\autouic_(CONFIG).stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Vscode_elementsEdit\elements\build\CMakeFiles\bca24a3de90ba11dcdf812b88c63b6e8\qrc_mainwindow.cpp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="E:\Vscode_elementsEdit\elements\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="E:\Vscode_elementsEdit\elements\mainwindow.ui" />
+    <None Include="E:\Vscode_elementsEdit\elements\mainwindow.qrc" />
+    <None Include="E:\Vscode_elementsEdit\elements\subassembly\subassembly.ui" />
+    <None Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\autouic_Debug.stamp" />
+    <None Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\autouic_Release.stamp" />
+    <None Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\autouic_MinSizeRel.stamp" />
+    <None Include="E:\Vscode_elementsEdit\elements\build\elements_autogen\autouic_RelWithDebInfo.stamp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{BEC48963-CADA-38FA-AA73-A349C4C2ACEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{44F75CD3-7290-38F7-B576-FD0BF279A7E8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{BECF2887-42B5-3BFD-805D-00BC66328418}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

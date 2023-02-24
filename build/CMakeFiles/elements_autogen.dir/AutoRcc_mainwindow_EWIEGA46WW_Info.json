@@ -1,0 +1,34 @@
+{
+	"BUILD_DIR" : "E:/Vscode_elementsEdit/elements/build/elements_autogen",
+	"CMAKE_BINARY_DIR" : "E:/Vscode_elementsEdit/elements/build",
+	"CMAKE_CURRENT_BINARY_DIR" : "E:/Vscode_elementsEdit/elements/build",
+	"CMAKE_CURRENT_SOURCE_DIR" : "E:/Vscode_elementsEdit/elements",
+	"CMAKE_SOURCE_DIR" : "E:/Vscode_elementsEdit/elements",
+	"INCLUDE_DIR" : "E:/Vscode_elementsEdit/elements/build/elements_autogen/include",
+	"INCLUDE_DIR_Debug" : "E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Debug",
+	"INCLUDE_DIR_MinSizeRel" : "E:/Vscode_elementsEdit/elements/build/elements_autogen/include_MinSizeRel",
+	"INCLUDE_DIR_RelWithDebInfo" : "E:/Vscode_elementsEdit/elements/build/elements_autogen/include_RelWithDebInfo",
+	"INCLUDE_DIR_Release" : "E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release",
+	"INPUTS" : 
+	[
+		"E:/Vscode_elementsEdit/elements/build/Debug/interface/icon/ToolBar_InRegardTo.png",
+		"E:/Vscode_elementsEdit/elements/build/Debug/interface/icon/Icons.ico",
+		"E:/Vscode_elementsEdit/elements/build/Debug/interface/icon/ToolBar_open.png",
+		"E:/Vscode_elementsEdit/elements/build/Debug/interface/icon/ToolBar_Save.png",
+		"E:/Vscode_elementsEdit/elements/build/Debug/interface/icon/ToolBar_Ver.png"
+	],
+	"LOCK_FILE" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Lock.lock",
+	"MULTI_CONFIG" : true,
+	"OPTIONS" : [ "-name", "mainwindow" ],
+	"OUTPUT_CHECKSUM" : "EWIEGA46WW",
+	"OUTPUT_NAME" : "qrc_mainwindow.cpp",
+	"RCC_EXECUTABLE" : "D:/Program/Qt/6.4.1/msvc2019_64/./bin/rcc.exe",
+	"RCC_LIST_OPTIONS" : [ "--list" ],
+	"SETTINGS_FILE" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Used.txt",
+	"SETTINGS_FILE_Debug" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Used_Debug.txt",
+	"SETTINGS_FILE_MinSizeRel" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Used_MinSizeRel.txt",
+	"SETTINGS_FILE_RelWithDebInfo" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Used_RelWithDebInfo.txt",
+	"SETTINGS_FILE_Release" : "E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Used_Release.txt",
+	"SOURCE" : "E:/Vscode_elementsEdit/elements/mainwindow.qrc",
+	"VERBOSITY" : 0
+}

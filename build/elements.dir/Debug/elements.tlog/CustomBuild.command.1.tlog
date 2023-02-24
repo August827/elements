@@ -1,0 +1,42 @@
+^E:\VSCODE_ELEMENTSEDIT\ELEMENTS\BUILD\CMAKEFILES\7D468C101B2DE1A9B8A971B96A5F1D6E\AUTOUIC_(CONFIG).STAMP.RULE
+setlocal
+cd E:\Vscode_elementsEdit\elements\build
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\VSCODE_ELEMENTSEDIT\ELEMENTS\BUILD\CMAKEFILES\BCA24A3DE90BA11DCDF812B88C63B6E8\QRC_MAINWINDOW.CPP.RULE
+setlocal
+cd E:\Vscode_elementsEdit\elements\build
+if %errorlevel% neq 0 goto :cmEnd
+E:
+if %errorlevel% neq 0 goto :cmEnd
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Info.json Debug
+if %errorlevel% neq 0 goto :cmEnd
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Info.json Release
+if %errorlevel% neq 0 goto :cmEnd
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Info.json MinSizeRel
+if %errorlevel% neq 0 goto :cmEnd
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -E cmake_autorcc E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements_autogen.dir/AutoRcc_mainwindow_EWIEGA46WW_Info.json RelWithDebInfo
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+^E:\VSCODE_ELEMENTSEDIT\ELEMENTS\CMAKELISTS.TXT
+setlocal
+D:\Program\Qt\Tools\CMake_64\bin\cmake.exe -SE:/Vscode_elementsEdit/elements -BE:/Vscode_elementsEdit/elements/build --check-stamp-file E:/Vscode_elementsEdit/elements/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

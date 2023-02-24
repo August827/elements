@@ -1,0 +1,4 @@
+E:/Vscode_elementsEdit/elements/build/CMakeFiles/elements.dir
+E:/Vscode_elementsEdit/elements/build/CMakeFiles/INSTALL.dir
+E:/Vscode_elementsEdit/elements/build/CMakeFiles/ALL_BUILD.dir
+E:/Vscode_elementsEdit/elements/build/CMakeFiles/ZERO_CHECK.dir
