@@ -43,6 +43,7 @@ E:/Vscode_elementsEdit/elements/mainwindow.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qhashfunctions.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevice.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevicebase.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qitemselectionmodel.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterable.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterator.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qline.h
@@ -98,6 +99,7 @@ E:/Vscode_elementsEdit/elements/mainwindow.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvariant.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qversiontagging.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QAction
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QStandardItemModel
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qaction.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qbitmap.h
@@ -132,25 +134,35 @@ E:/Vscode_elementsEdit/elements/mainwindow.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qvalidator.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QCheckBox
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QComboBox
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QFileDialog
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QHeaderView
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLabel
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLineEdit
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMainWindow
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMenu
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMessageBox
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QPushButton
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTableView
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTextEdit
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QWidget
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemdelegate.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemview.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractscrollarea.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractslider.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractspinbox.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcheckbox.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcombobox.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qdialog.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qfiledialog.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qframe.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qheaderview.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlabel.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlineedit.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qmainwindow.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qmenu.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qmessagebox.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qrubberband.h
@@ -159,17 +171,16 @@ E:/Vscode_elementsEdit/elements/mainwindow.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyle.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyleoption.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabbar.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtableview.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabwidget.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtextedit.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
  mdp:E:/Vscode_elementsEdit/DataSetCatalog/DataSetCatalog_global.h
  mdp:E:/Vscode_elementsEdit/DataSetCatalog/datasetcatalog.h
- mdp:E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
  mdp:E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
-E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.cpp
- uic:ui_attributelist.h
 E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mmc:Q_OBJECT
  mdp:E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
@@ -206,6 +217,7 @@ E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qhashfunctions.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevice.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevicebase.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qitemselectionmodel.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterable.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterator.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qline.h
@@ -261,6 +273,7 @@ E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvariant.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvarlengtharray.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qversiontagging.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QAction
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QStandardItemModel
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qaction.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qbitmap.h
@@ -295,19 +308,29 @@ E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qvalidator.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs_win.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QCheckBox
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QComboBox
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QHeaderView
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLabel
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLineEdit
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMenu
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QPushButton
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTableView
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTextEdit
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QWidget
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractbutton.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemdelegate.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemview.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractscrollarea.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractslider.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractspinbox.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcheckbox.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcombobox.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qframe.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qheaderview.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlabel.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlineedit.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qmenu.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qpushbutton.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qrubberband.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qsizepolicy.h
@@ -315,15 +338,20 @@ E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyle.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyleoption.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabbar.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtableview.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabwidget.h
+ mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtextedit.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgets-config.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
- mdp:E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
+E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.cpp
+ uic:ui_attributelist.h
+E:/Vscode_elementsEdit/elements/main.cpp
 E:/Vscode_elementsEdit/elements/mainwindow.cpp
  uic:./ui_mainwindow.h
-E:/Vscode_elementsEdit/elements/main.cpp
+E:/Vscode_elementsEdit/elements/subassembly/subassembly.cpp
+ uic:ui_subassembly.h
 E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
  mmc:Q_OBJECT
  mdp:E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
@@ -460,5 +488,3 @@ E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
-E:/Vscode_elementsEdit/elements/subassembly/subassembly.cpp
- uic:ui_subassembly.h

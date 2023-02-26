@@ -222,6 +222,51 @@ int DataSetCatalog::getHintList(QString name, QStringList &list)
         list = sett->value("/掉落").toString().split("；");
         return 1;
     }
+    if (name.indexOf("发布任务") >= 0)
+    {
+        list = sett->value("/发布任务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("完成任务") >= 0)
+    {
+        list = sett->value("/完成任务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("传送服务") >= 0)
+    {
+        list = sett->value("/传送服务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("出售服务") >= 0)
+    {
+        list = sett->value("/出售服务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("仓库服务") >= 0)
+    {
+        list = sett->value("/仓库服务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("洗点服务") >= 0)
+    {
+        list = sett->value("/洗点服务").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("装备绑定") >= 0)
+    {
+        list = sett->value("/装备绑定").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("装备销毁") >= 0)
+    {
+        list = sett->value("/装备销毁").toString().split("；");
+        return 1;
+    }
+    if (name.indexOf("解除销毁") >= 0)
+    {
+        list = sett->value("/解除销毁").toString().split("；");
+        return 1;
+    }
     sett->endGroup();
     // 释放内存
     delete sett;

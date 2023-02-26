@@ -32,6 +32,7 @@ E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release/ZBFO3HMUM
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qhashfunctions.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevice.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiodevicebase.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qitemselectionmodel.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterable.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qiterator.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qline.h \
@@ -87,6 +88,7 @@ E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release/ZBFO3HMUM
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvariant.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qvarlengtharray.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtCore/qversiontagging.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QAction \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/QStandardItemModel \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qaction.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qbitmap.h \
@@ -121,19 +123,29 @@ E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release/ZBFO3HMUM
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qvalidator.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtGui/qwindowdefs_win.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QCheckBox \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QComboBox \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QHeaderView \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLabel \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QLineEdit \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QMenu \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QPushButton \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTableView \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QTextEdit \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/QWidget \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractbutton.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemdelegate.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractitemview.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractscrollarea.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractslider.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qabstractspinbox.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcheckbox.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qcombobox.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qframe.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qheaderview.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlabel.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qlineedit.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qmenu.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qpushbutton.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qrubberband.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qsizepolicy.h \
@@ -141,9 +153,10 @@ E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release/ZBFO3HMUM
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyle.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qstyleoption.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabbar.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtableview.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtabwidget.h \
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtextedit.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgets-config.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
-  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h \
-  E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
+  D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h

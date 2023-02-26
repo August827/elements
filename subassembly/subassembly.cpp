@@ -16,7 +16,7 @@ void subassembly::on_Button_Clicked()
     QPushButton *button = qobject_cast<QPushButton *>(sender());
     QString name = button->objectName();
 
-    if (name == "保护类型" || name == "职业要求" || name == "装备部位" || name == "转生限制")
+    if (name == "保护类型" || name == "职业要求" || name == "装备部位" || name == "转生限制" || name == "服务组合")
     {
         AddUpWindow(name, 1);
     }

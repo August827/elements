@@ -11,6 +11,7 @@
 
 #include <QtCore/QVariant>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -20,14 +21,14 @@ class Ui_subassembly
 {
 public:
     QHBoxLayout *Widget;
-    QHBoxLayout *m_HBoxLayout;
+    QGridLayout *m_GridLayout;
 
     void setupUi(QWidget *subassembly)
     {
         if (subassembly->objectName().isEmpty())
             subassembly->setObjectName("subassembly");
         subassembly->setWindowModality(Qt::ApplicationModal);
-        subassembly->resize(410, 27);
+        subassembly->resize(700, 600);
         QFont font;
         font.setFamilies({QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221")});
         font.setPointSize(9);
@@ -36,10 +37,10 @@ public:
         Widget->setSpacing(0);
         Widget->setObjectName("Widget");
         Widget->setContentsMargins(0, 0, 0, 0);
-        m_HBoxLayout = new QHBoxLayout();
-        m_HBoxLayout->setObjectName("m_HBoxLayout");
+        m_GridLayout = new QGridLayout();
+        m_GridLayout->setObjectName("m_GridLayout");
 
-        Widget->addLayout(m_HBoxLayout);
+        Widget->addLayout(m_GridLayout);
 
 
         retranslateUi(subassembly);

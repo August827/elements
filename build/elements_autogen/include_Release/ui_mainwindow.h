@@ -13,9 +13,11 @@
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
 #include <QtWidgets/QComboBox>
+#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QHBoxLayout>
 #include <QtWidgets/QHeaderView>
 #include <QtWidgets/QLabel>
+#include <QtWidgets/QLineEdit>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QScrollArea>
@@ -38,12 +40,12 @@ public:
     QAction *action_Ver;
     QAction *action_AboutMe;
     QWidget *centralwidget;
-    QHBoxLayout *horizontalLayout;
+    QVBoxLayout *verticalLayout_4;
     QSplitter *m_splitter_x;
     QWidget *verticalLayoutWidget;
     QVBoxLayout *verticalLayout;
-    QComboBox *m_ComBox_Section;
-    QTableView *m_TabVw_Data;
+    QComboBox *m_ComBox_HugeSectionName;
+    QTableView *m_TabVw_HugeSectionData;
     QWidget *verticalLayoutWidget_2;
     QVBoxLayout *verticalLayout_2;
     QSplitter *m_splitter_z;
@@ -51,6 +53,18 @@ public:
     QVBoxLayout *verticalLayout_3;
     QTabWidget *tabWidget;
     QWidget *tab;
+    QGridLayout *m_GridLayout_Tab_1;
+    QLabel *label_4;
+    QLineEdit *m_Edit_Search_Contents;
+    QLabel *label_3;
+    QPushButton *m_But_Search;
+    QLineEdit *m_Edit_Filter_Contents;
+    QPushButton *m_But_Filter;
+    QComboBox *m_ComBo_Filter_Type;
+    QComboBox *m_ComBo_Filter_Condition;
+    QComboBox *m_ComBo_Search_Type;
+    QLabel *label_5;
+    QLabel *label;
     QWidget *tab_2;
     QScrollArea *scrollArea;
     QWidget *scrollAreaWidgetContents;
@@ -69,13 +83,14 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(1200, 800);
+        MainWindow->resize(1250, 800);
         QFont font;
         font.setFamilies({QString::fromUtf8("\345\276\256\350\275\257\351\233\205\351\273\221")});
         font.setPointSize(9);
         MainWindow->setFont(font);
         action_Open = new QAction(MainWindow);
         action_Open->setObjectName("action_Open");
+        action_Open->setEnabled(true);
         QIcon icon;
         icon.addFile(QString::fromUtf8(":/build/Debug/interface/icon/ToolBar_open.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Open->setIcon(icon);
@@ -86,9 +101,12 @@ public:
         action_Save->setIcon(icon1);
         action_Ver = new QAction(MainWindow);
         action_Ver->setObjectName("action_Ver");
+        action_Ver->setEnabled(true);
         QIcon icon2;
         icon2.addFile(QString::fromUtf8(":/build/Debug/interface/icon/ToolBar_Ver.png"), QSize(), QIcon::Normal, QIcon::Off);
         action_Ver->setIcon(icon2);
+        action_Ver->setShortcutContext(Qt::WindowShortcut);
+        action_Ver->setPriority(QAction::NormalPriority);
         action_AboutMe = new QAction(MainWindow);
         action_AboutMe->setObjectName("action_AboutMe");
         QIcon icon3;
@@ -96,8 +114,8 @@ public:
         action_AboutMe->setIcon(icon3);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        horizontalLayout = new QHBoxLayout(centralwidget);
-        horizontalLayout->setObjectName("horizontalLayout");
+        verticalLayout_4 = new QVBoxLayout(centralwidget);
+        verticalLayout_4->setObjectName("verticalLayout_4");
         m_splitter_x = new QSplitter(centralwidget);
         m_splitter_x->setObjectName("m_splitter_x");
         m_splitter_x->setOrientation(Qt::Horizontal);
@@ -107,16 +125,16 @@ public:
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
-        m_ComBox_Section = new QComboBox(verticalLayoutWidget);
-        m_ComBox_Section->setObjectName("m_ComBox_Section");
-        m_ComBox_Section->setMaxVisibleItems(35);
+        m_ComBox_HugeSectionName = new QComboBox(verticalLayoutWidget);
+        m_ComBox_HugeSectionName->setObjectName("m_ComBox_HugeSectionName");
+        m_ComBox_HugeSectionName->setMaxVisibleItems(35);
 
-        verticalLayout->addWidget(m_ComBox_Section);
+        verticalLayout->addWidget(m_ComBox_HugeSectionName);
 
-        m_TabVw_Data = new QTableView(verticalLayoutWidget);
-        m_TabVw_Data->setObjectName("m_TabVw_Data");
+        m_TabVw_HugeSectionData = new QTableView(verticalLayoutWidget);
+        m_TabVw_HugeSectionData->setObjectName("m_TabVw_HugeSectionData");
 
-        verticalLayout->addWidget(m_TabVw_Data);
+        verticalLayout->addWidget(m_TabVw_HugeSectionData);
 
         m_splitter_x->addWidget(verticalLayoutWidget);
         verticalLayoutWidget_2 = new QWidget(m_splitter_x);
@@ -136,6 +154,74 @@ public:
         tabWidget->setObjectName("tabWidget");
         tab = new QWidget();
         tab->setObjectName("tab");
+        m_GridLayout_Tab_1 = new QGridLayout(tab);
+        m_GridLayout_Tab_1->setSpacing(4);
+        m_GridLayout_Tab_1->setObjectName("m_GridLayout_Tab_1");
+        m_GridLayout_Tab_1->setContentsMargins(5, 5, 5, 5);
+        label_4 = new QLabel(tab);
+        label_4->setObjectName("label_4");
+
+        m_GridLayout_Tab_1->addWidget(label_4, 1, 2, 1, 1);
+
+        m_Edit_Search_Contents = new QLineEdit(tab);
+        m_Edit_Search_Contents->setObjectName("m_Edit_Search_Contents");
+
+        m_GridLayout_Tab_1->addWidget(m_Edit_Search_Contents, 0, 2, 1, 4);
+
+        label_3 = new QLabel(tab);
+        label_3->setObjectName("label_3");
+
+        m_GridLayout_Tab_1->addWidget(label_3, 1, 0, 1, 1);
+
+        m_But_Search = new QPushButton(tab);
+        m_But_Search->setObjectName("m_But_Search");
+
+        m_GridLayout_Tab_1->addWidget(m_But_Search, 0, 6, 1, 1);
+
+        m_Edit_Filter_Contents = new QLineEdit(tab);
+        m_Edit_Filter_Contents->setObjectName("m_Edit_Filter_Contents");
+
+        m_GridLayout_Tab_1->addWidget(m_Edit_Filter_Contents, 1, 5, 1, 1);
+
+        m_But_Filter = new QPushButton(tab);
+        m_But_Filter->setObjectName("m_But_Filter");
+
+        m_GridLayout_Tab_1->addWidget(m_But_Filter, 1, 6, 1, 1);
+
+        m_ComBo_Filter_Type = new QComboBox(tab);
+        m_ComBo_Filter_Type->setObjectName("m_ComBo_Filter_Type");
+
+        m_GridLayout_Tab_1->addWidget(m_ComBo_Filter_Type, 1, 1, 1, 1);
+
+        m_ComBo_Filter_Condition = new QComboBox(tab);
+        m_ComBo_Filter_Condition->setObjectName("m_ComBo_Filter_Condition");
+
+        m_GridLayout_Tab_1->addWidget(m_ComBo_Filter_Condition, 1, 3, 1, 1);
+
+        m_ComBo_Search_Type = new QComboBox(tab);
+        m_ComBo_Search_Type->addItem(QString());
+        m_ComBo_Search_Type->addItem(QString());
+        m_ComBo_Search_Type->setObjectName("m_ComBo_Search_Type");
+
+        m_GridLayout_Tab_1->addWidget(m_ComBo_Search_Type, 0, 1, 1, 1);
+
+        label_5 = new QLabel(tab);
+        label_5->setObjectName("label_5");
+
+        m_GridLayout_Tab_1->addWidget(label_5, 1, 4, 1, 1);
+
+        label = new QLabel(tab);
+        label->setObjectName("label");
+
+        m_GridLayout_Tab_1->addWidget(label, 0, 0, 1, 1);
+
+        m_GridLayout_Tab_1->setColumnStretch(0, 5);
+        m_GridLayout_Tab_1->setColumnStretch(1, 20);
+        m_GridLayout_Tab_1->setColumnStretch(2, 5);
+        m_GridLayout_Tab_1->setColumnStretch(3, 20);
+        m_GridLayout_Tab_1->setColumnStretch(4, 5);
+        m_GridLayout_Tab_1->setColumnStretch(5, 35);
+        m_GridLayout_Tab_1->setColumnStretch(6, 10);
         tabWidget->addTab(tab, QString());
         tab_2 = new QWidget();
         tab_2->setObjectName("tab_2");
@@ -208,7 +294,7 @@ public:
         verticalLayout_2->setStretch(1, 5);
         m_splitter_x->addWidget(verticalLayoutWidget_2);
 
-        horizontalLayout->addWidget(m_splitter_x);
+        verticalLayout_4->addWidget(m_splitter_x);
 
         MainWindow->setCentralWidget(centralwidget);
         statusbar = new QStatusBar(MainWindow);
@@ -216,7 +302,7 @@ public:
         MainWindow->setStatusBar(statusbar);
         m_ToolBar_Main = new QToolBar(MainWindow);
         m_ToolBar_Main->setObjectName("m_ToolBar_Main");
-        m_ToolBar_Main->setIconSize(QSize(24, 24));
+        m_ToolBar_Main->setIconSize(QSize(20, 20));
         m_ToolBar_Main->setToolButtonStyle(Qt::ToolButtonIconOnly);
         m_ToolBar_Main->setFloatable(false);
         MainWindow->addToolBar(Qt::TopToolBarArea, m_ToolBar_Main);
@@ -228,6 +314,9 @@ public:
         m_ToolBar_Main->addAction(action_AboutMe);
 
         retranslateUi(MainWindow);
+
+        tabWidget->setCurrentIndex(0);
+
 
         QMetaObject::connectSlotsByName(MainWindow);
     } // setupUi
@@ -257,8 +346,17 @@ public:
 #if QT_CONFIG(tooltip)
         action_AboutMe->setToolTip(QCoreApplication::translate("MainWindow", "AboutMe", nullptr));
 #endif // QT_CONFIG(tooltip)
-        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "Tab 1", nullptr));
-        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "Tab 2", nullptr));
+        label_4->setText(QCoreApplication::translate("MainWindow", "\346\235\241\344\273\266\357\274\232", nullptr));
+        label_3->setText(QCoreApplication::translate("MainWindow", "\345\255\227\346\256\265\347\261\273\345\236\213\357\274\232", nullptr));
+        m_But_Search->setText(QCoreApplication::translate("MainWindow", "\346\220\234\347\264\242", nullptr));
+        m_But_Filter->setText(QCoreApplication::translate("MainWindow", "\350\277\207\346\273\244", nullptr));
+        m_ComBo_Search_Type->setItemText(0, QCoreApplication::translate("MainWindow", "\346\214\211<ID>\346\220\234\347\264\242", nullptr));
+        m_ComBo_Search_Type->setItemText(1, QCoreApplication::translate("MainWindow", "\346\214\211<\345\220\215\347\247\260>\346\220\234\347\264\242", nullptr));
+
+        label_5->setText(QCoreApplication::translate("MainWindow", "\346\225\260\345\200\274\357\274\232", nullptr));
+        label->setText(QCoreApplication::translate("MainWindow", "\346\220\234\347\264\242\347\261\273\345\236\213\357\274\232", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab), QCoreApplication::translate("MainWindow", "\350\277\207\346\273\244\346\220\234\347\264\242", nullptr));
+        tabWidget->setTabText(tabWidget->indexOf(tab_2), QCoreApplication::translate("MainWindow", "\345\205\250\345\261\200\346\220\234\347\264\242", nullptr));
         m_But_UpPage->setText(QCoreApplication::translate("MainWindow", "\344\270\212\344\270\200\351\241\265", nullptr));
         m_Label_MinPage->setText(QCoreApplication::translate("MainWindow", "1", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "/", nullptr));
