@@ -176,5 +176,6 @@ E:/Vscode_elementsEdit/elements/build/elements_autogen/include_Release/EWIEGA46W
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h \
   D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h \
   E:/Vscode_elementsEdit/DataSetCatalog/DataSetCatalog_global.h \
+  E:/Vscode_elementsEdit/DataSetCatalog/FunctionStruct.h \
   E:/Vscode_elementsEdit/DataSetCatalog/datasetcatalog.h \
   E:/Vscode_elementsEdit/elements/subassembly/subassembly.h

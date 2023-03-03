@@ -179,8 +179,11 @@ E:/Vscode_elementsEdit/elements/mainwindow.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
  mdp:E:/Vscode_elementsEdit/DataSetCatalog/DataSetCatalog_global.h
+ mdp:E:/Vscode_elementsEdit/DataSetCatalog/FunctionStruct.h
  mdp:E:/Vscode_elementsEdit/DataSetCatalog/datasetcatalog.h
  mdp:E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
+E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.cpp
+ uic:ui_attributelist.h
 E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mmc:Q_OBJECT
  mdp:E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
@@ -345,13 +348,9 @@ E:/Vscode_elementsEdit/elements/subassembly/subassembly.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
-E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.cpp
- uic:ui_attributelist.h
-E:/Vscode_elementsEdit/elements/main.cpp
 E:/Vscode_elementsEdit/elements/mainwindow.cpp
  uic:./ui_mainwindow.h
-E:/Vscode_elementsEdit/elements/subassembly/subassembly.cpp
- uic:ui_subassembly.h
+E:/Vscode_elementsEdit/elements/main.cpp
 E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
  mmc:Q_OBJECT
  mdp:E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
@@ -488,3 +487,5 @@ E:/Vscode_elementsEdit/elements/subassembly/attributelist/attributelist.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsexports.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qtwidgetsglobal.h
  mdp:D:/Program/Qt/6.4.1/msvc2019_64/include/QtWidgets/qwidget.h
+E:/Vscode_elementsEdit/elements/subassembly/subassembly.cpp
+ uic:ui_subassembly.h

@@ -15,6 +15,34 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     list_spl_z.append(660);
     ui->m_splitter_z->setSizes(list_spl_z);
 #pragma endregion
+
+#pragma region // QTabelView 右键菜单初始化
+    m_popMenu = new QMenu(ui->m_TabVw_HugeSectionData);
+    QAction *CopyAdd = new QAction();  // 复制增加
+    QAction *InestAdd = new QAction(); // 插入增加
+    QAction *Delete = new QAction();   // 删除
+    QAction *Empty = new QAction();    // 清空
+    CopyAdd->setText(QString("复制增加"));
+    InestAdd->setText(QString("插入增加"));
+    Delete->setText(QString("删除"));
+    Empty->setText(QString("清空"));
+
+    CopyAdd->setObjectName(QString("复制增加"));
+    connect(CopyAdd, &QAction::triggered, this, &MainWindow::slotMenu_triggered); // 右键菜单按钮——槽函数
+    InestAdd->setObjectName(QString("插入增加"));
+    connect(InestAdd, &QAction::triggered, this, &MainWindow::slotMenu_triggered); // 右键菜单按钮——槽函数
+    Delete->setObjectName(QString("删除"));
+    connect(Delete, &QAction::triggered, this, &MainWindow::slotMenu_triggered); //  右键菜单按钮——槽函数
+    Empty->setObjectName(QString("清空"));
+    connect(Empty, &QAction::triggered, this, &MainWindow::slotMenu_triggered); // 右键菜单按钮——槽函数
+
+    m_popMenu->addAction(CopyAdd);
+    m_popMenu->addAction(InestAdd);
+    m_popMenu->addAction(Delete);
+    m_popMenu->addAction(Empty);
+
+    connect(ui->m_TabVw_HugeSectionData, SIGNAL(customContextMenuRequested(QPoint)), this, SLOT(slotContextMenu(QPoint))); // tablevoew右键弹出菜单——槽函数
+#pragma endregion
 }
 
 MainWindow::~MainWindow()
@@ -56,15 +84,10 @@ void MainWindow::on_action_Ver_triggered()
 
 void MainWindow::on_action_AboutMe_triggered()
 {
-    // model_Data->item(indexList.at(0).row(), 0)->setCheckState(Qt::Checked);
+    // My_Data.model_HugeSection->item(, 0)->setCheckState(Qt::Checked);
 
     // bool ok = model_Data->item(0, 0)->checkState() == Qt::Checked;
     // int a = 0;
-    QSettings *sett = new QSettings("data\\verHint.ini", QSettings::IniFormat);
-    sett->beginGroup("hint");
-    QStringList list = sett->allKeys();
-
-    int a = 0;
 }
 
 void MainWindow::on_m_ComBox_HugeSectionName_currentIndexChanged(int index)
@@ -75,14 +98,15 @@ void MainWindow::on_m_ComBox_HugeSectionName_currentIndexChanged(int index)
     QStringList List_Data = {"序号", "ID", "名称"};
     My_Data.model_HugeSection->setHorizontalHeaderLabels(List_Data);
     ui->m_TabVw_HugeSectionData->setModel(My_Data.model_HugeSection);
-    ui->m_TabVw_HugeSectionData->setColumnWidth(0, 63);
-    ui->m_TabVw_HugeSectionData->setColumnWidth(1, 45);
+    ui->m_TabVw_HugeSectionData->setColumnWidth(0, 50);
+    ui->m_TabVw_HugeSectionData->setColumnWidth(1, 50);
     ui->m_TabVw_HugeSectionData->horizontalHeader()->setStretchLastSection(true);    // 最后一列补全所有空白位置
     ui->m_TabVw_HugeSectionData->setSelectionBehavior(QTableView::SelectRows);       // 设置选中一整行
-    ui->m_TabVw_HugeSectionData->setSelectionMode(QTableView::SingleSelection);      // 设置不能选中多行
     ui->m_TabVw_HugeSectionData->setEditTriggers(QAbstractItemView::NoEditTriggers); // 禁止编辑
     ui->m_TabVw_HugeSectionData->verticalHeader()->hide();                           // 隐藏行号
     ui->m_TabVw_HugeSectionData->scrollToTop();                                      // 让滚动条滚动到最顶部
+    ui->m_TabVw_HugeSectionData->setContextMenuPolicy(Qt::CustomContextMenu);        // 可弹出右键菜单
+
     connect(ui->m_TabVw_HugeSectionData->selectionModel(), SIGNAL(currentRowChanged(const QModelIndex &, const QModelIndex &)), this, SLOT(showOperationDetails_Data(const QModelIndex &, const QModelIndex &)));
 
     if (My_Data.getTable_Model_HugeSegment(index))
@@ -120,6 +144,93 @@ void MainWindow::on_m_ComBox_HugeSectionName_currentIndexChanged(int index)
 void MainWindow::showOperationDetails_Data(const QModelIndex &current, const QModelIndex &previous)
 {
     setSamllSectionWindowName(current.row(), ui->m_Label_MinPage->text().toInt());
+}
+
+void MainWindow::slotContextMenu(QPoint pos)
+{
+    auto index = ui->m_TabVw_HugeSectionData->indexAt(pos);
+    if (index.isValid())
+    {
+        m_popMenu->exec(QCursor::pos()); // 菜单出现的位置为当前鼠标的位置
+    }
+}
+
+void MainWindow::slotMenu_triggered()
+{
+    QAction *button = qobject_cast<QAction *>(sender());
+    QString name = button->objectName();
+    if (name == "复制增加")
+    {
+        QModelIndexList indexList = ui->m_TabVw_HugeSectionData->selectionModel()->selectedIndexes();
+        if (!indexList.isEmpty())
+        {
+            for (int i = 0; i < indexList.size() / 3; i++)
+            {
+                int row = indexList.at(i * 3).row();
+                QByteArray segment = My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.mid(row * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length);
+                My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.append(segment);
+                My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Count++;
+            }
+            on_m_ComBox_HugeSectionName_currentIndexChanged(m_ComBoxIndex);
+            ui->m_TabVw_HugeSectionData->selectRow(indexList.at(0).row());
+        }
+    }
+    else if (name == "插入增加")
+    {
+        int row = ui->m_TabVw_HugeSectionData->currentIndex().row();
+        QByteArray segment = My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.mid(row * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length);
+        My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.insert(row * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, segment);
+        My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Count++;
+        on_m_ComBox_HugeSectionName_currentIndexChanged(m_ComBoxIndex);
+        ui->m_TabVw_HugeSectionData->selectRow(row + 1);
+    }
+    else if (name == "删除")
+    {
+        QModelIndexList indexList = ui->m_TabVw_HugeSectionData->selectionModel()->selectedIndexes();
+        if (!indexList.isEmpty())
+        {
+            if (QMessageBox::Yes == QMessageBox::warning(this, "警告", "您确定删除当前选中的这：" + QString::number(indexList.size() / 3) + " 项吗？", QMessageBox::Yes | QMessageBox::No))
+            {
+                for (int i = 0; i < indexList.size() / 3; i++)
+                {
+                    int row = indexList.at(i * 3).row();
+                    My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.remove((row - i) * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length);
+                    My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Count--;
+                }
+                on_m_ComBox_HugeSectionName_currentIndexChanged(m_ComBoxIndex);
+                ui->m_TabVw_HugeSectionData->selectRow(indexList.at(0).row());
+            }
+        }
+    }
+    else if (name == "清空")
+    {
+        if (QMessageBox::Yes == QMessageBox::warning(this, "警告：", "\r\n你确定清空当前列表内所有的项目吗？", QMessageBox::Yes | QMessageBox::No))
+        {
+            My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.clear();
+            My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Count = 0;
+            on_m_ComBox_HugeSectionName_currentIndexChanged(m_ComBoxIndex);
+        }
+    }
+    // else if (name == "上移")
+    // {
+    //     int row = ui->m_TabVw_HugeSectionData->currentIndex().row();
+    //     if (row > 0)
+    //     {
+    //         QByteArray segment = My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.mid(row * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length);
+    //         My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.remove(row * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length);
+    //         My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Data.insert((row - 1) * My_Data.m_Basic_HugeSection[m_ComBoxIndex].m_Length, segment);
+    //         on_m_ComBox_HugeSectionName_currentIndexChanged(m_ComBoxIndex);
+    //         ui->m_TabVw_HugeSectionData->selectRow(row - 1);
+    //     }
+    // }
+}
+
+void MainWindow::on_m_TabVw_Search_All_doubleClicked(const QModelIndex &index)
+{
+    int hugeindex = ui->m_TabVw_Search_All->model()->index(index.row(), 3).data().toInt();
+    int smallindex = ui->m_TabVw_Search_All->model()->index(index.row(), 4).data().toInt();
+    ui->m_ComBox_HugeSectionName->setCurrentIndex(hugeindex);
+    ui->m_TabVw_HugeSectionData->selectRow(smallindex);
 }
 
 void MainWindow::on_m_But_UpPage_clicked()
@@ -272,7 +383,7 @@ void MainWindow::on_m_But_Filter_clicked()
         switch (Conditionindex)
         {
         case 0:
-            if (strsum.toInt() == ui->m_Edit_Filter_Contents->text().toInt())
+            if (strsum == ui->m_Edit_Filter_Contents->text())
             {
                 ui->m_TabVw_HugeSectionData->setRowHidden(i, false);
             }
@@ -338,7 +449,88 @@ void MainWindow::on_m_But_Filter_clicked()
     }
 }
 
-void MainWindow::on_m_TabWid_currentChanged(int index)
+void MainWindow::on_m_But_Search_All_clicked()
+{
+    if (ui->m_Edit_Search_Contents_All->text().isEmpty())
+    {
+        QMessageBox::warning(this, "警告：", "\r\nEdit内容为空！无法搜索");
+        return;
+    }
+    QStringList vallist, namelist;
+    QList<int> keylist;
+    int index = 0;
+
+    delete ui->m_TabVw_Search_All->model();
+    model_Search_All = new QStandardItemModel();
+    QStringList List_Data = {"段名称", "ID", "名称"};
+    model_Search_All->setHorizontalHeaderLabels(List_Data);
+    ui->m_TabVw_Search_All->setModel(model_Search_All);
+    ui->m_TabVw_Search_All->setColumnWidth(0, 200);
+    ui->m_TabVw_Search_All->setColumnWidth(1, 100);
+    ui->m_TabVw_Search_All->setColumnWidth(2, 300);
+    ui->m_TabVw_Search_All->horizontalHeader()->setStretchLastSection(true);    // 最后一列补全所有空白位置
+    ui->m_TabVw_Search_All->setSelectionBehavior(QTableView::SelectRows);       // 设置选中一整行
+    ui->m_TabVw_Search_All->setSelectionMode(QTableView::SingleSelection);      // 设置不能选中多行
+    ui->m_TabVw_Search_All->setEditTriggers(QAbstractItemView::NoEditTriggers); // 禁止编辑
+    ui->m_TabVw_Search_All->verticalHeader()->hide();                           // 隐藏行号
+    ui->m_TabVw_Search_All->scrollToTop();                                      // 让滚动条滚动到最顶部
+
+    for (int i = 0; i < My_Data.m_Basic_HugeSection.size(); i++)
+    {
+        switch (ui->m_ComBo_Search_Type_All->currentIndex())
+        {
+        case 0:
+            if (My_Data.m_Basic_HugeSection.at(i).m_SmallSegment.contains(ui->m_Edit_Search_Contents_All->text().toInt()))
+            {
+                keylist = My_Data.m_Basic_HugeSection.at(i).m_SmallSegment.keys();
+                vallist = My_Data.m_Basic_HugeSection.at(i).m_SmallSegment.values();
+                QString hugename = My_Data.getHugeSegmentName(i, 1);
+                for (int j = 0; j < keylist.size(); j++)
+                {
+                    if (keylist.at(j) == ui->m_Edit_Search_Contents_All->text().toInt())
+                    {
+                        QList<QStandardItem *> list;
+                        list << new QStandardItem(hugename);
+                        list << new QStandardItem(QString::number(keylist.at(j)));
+                        list << new QStandardItem(vallist.at(j));
+                        list << new QStandardItem(QString::number(i));
+                        list << new QStandardItem(QString::number(j));
+                        model_Search_All->insertRow(index, list);
+                        index++;
+                    }
+                }
+            }
+            break;
+        case 1:
+            keylist = My_Data.m_Basic_HugeSection.at(i).m_SmallSegment.keys();
+            vallist = My_Data.m_Basic_HugeSection.at(i).m_SmallSegment.values();
+            if (vallist.filter(ui->m_Edit_Search_Contents_All->text()).size() > 0)
+            {
+                QString hugename = My_Data.getHugeSegmentName(i, 1);
+                for (int j = 0; j < vallist.size(); j++)
+                {
+                    if (vallist.at(j).indexOf(ui->m_Edit_Search_Contents_All->text()) > -1)
+                    {
+                        QList<QStandardItem *> list;
+                        list << new QStandardItem(hugename);
+                        list << new QStandardItem(QString::number(keylist.at(j)));
+                        list << new QStandardItem(vallist.at(j));
+                        list << new QStandardItem(QString::number(i));
+                        list << new QStandardItem(QString::number(j));
+                        model_Search_All->insertRow(index, list);
+                        index++;
+                    }
+                }
+            }
+            break;
+        }
+    }
+    ui->label_7->setText("查询数量： " + QString::number(index));
+    ui->m_TabVw_Search_All->setColumnHidden(3, true); // 隐藏3列
+    ui->m_TabVw_Search_All->setColumnHidden(4, true); // 隐藏4列
+}
+
+void MainWindow::on_tabWidget_currentChanged(int index)
 {
     if (index == 0)
     {
@@ -350,8 +542,8 @@ void MainWindow::on_m_TabWid_currentChanged(int index)
     else
     {
         QList<int> list_spl_z;
-        list_spl_z.append(340);
-        list_spl_z.append(360);
+        list_spl_z.append(300);
+        list_spl_z.append(400);
         ui->m_splitter_z->setSizes(list_spl_z);
     }
 }
@@ -367,10 +559,11 @@ void MainWindow::setSamllSectionWindow(int paegindex)
     {
         return;
     }
+    ui->m_ComBo_Filter_Type->addItems(My_Data.getSmallSegmentName(m_ComBoxIndex + 1, 0));
     subassembly *sub;
     QWidget *widget = new QWidget();
     QGridLayout *grid = new QGridLayout();
-    grid->setVerticalSpacing(1);
+    grid->setVerticalSpacing(0);
     grid->setHorizontalSpacing(10);
     int m = (paegindex - 1) * 75;
     Count = Count - m;
@@ -385,7 +578,6 @@ void MainWindow::setSamllSectionWindow(int paegindex)
             sub->m_TypeWindow.m_Exc = SmallSegmentList.at(m).split("|").at(2).toInt();
             sub->m_TypeWindow.m_Length = SmallSegmentList.at(m).split("|").at(3).toInt();
             m_subassemblyList << sub;
-            ui->m_ComBo_Filter_Type->addItem(SmallSegmentList.at(m).split("|").at(0));
             Count--;
             if (Count == 0)
             {
@@ -413,6 +605,7 @@ void MainWindow::setSamllSectionWindowName(int dataindex, int paegindex)
     dataStream.device()->seek(m_subassemblyList.at(0)->m_TypeWindow.m_Exc);
     int ecx = 0;
     int sum = m_subassemblyList.size();
+    ui->m_Label_Itemicon->clear();
     for (int i = 0; i < sum; i++)
     {
         switch (m_subassemblyList.at(i)->m_TypeWindow.m_Type)
@@ -481,9 +674,10 @@ void MainWindow::setSamllSectionWindowName(int dataindex, int paegindex)
             break;
         }
 
-        if (m_subassemblyList[i]->combo_but_Flag == 1)
+        switch (m_subassemblyList[i]->combo_but_Flag)
         {
-            m_subassemblyList.at(i)->m_TypeWindow.m_Lable2->setText("");
+        case 1:
+            m_subassemblyList.at(i)->m_TypeWindow.m_Lable2->clear();
             if (m_subassemblyList[i]->m_TypeWindow.m_Edit->text().toInt() > 0)
             {
                 QString name = m_subassemblyList[i]->m_TypeWindow.m_Lable->text();
@@ -491,10 +685,20 @@ void MainWindow::setSamllSectionWindowName(int dataindex, int paegindex)
                 m_subassemblyList.at(i)->m_TypeWindow.m_Lable2->setText(str);
                 m_subassemblyList.at(i)->m_TypeWindow.m_Lable2->setToolTip(str);
             }
-        }
-        if (m_subassemblyList[i]->combo_but_Flag != 3)
-        {
             m_subassemblyList[i]->m_TypeWindow.m_Edit->setCursorPosition(0);
+            break;
+        case 2:
+            m_subassemblyList[i]->m_TypeWindow.m_Edit->setCursorPosition(0);
+            break;
+        case 3:
+            break;
+        case 4:
+            QString str = My_Data.getSmallSegmentItemIcon(m_subassemblyList.at(i)->m_TypeWindow.m_Edit->text().toInt(), m_subassemblyList.at(i)->m_TypeWindow.m_Lable->text());
+            QPixmap *pixmap = new QPixmap("data/Itemicon/" + str);
+            pixmap->scaled(ui->m_Label_Itemicon->size(), Qt::KeepAspectRatio);
+            ui->m_Label_Itemicon->setScaledContents(true);
+            ui->m_Label_Itemicon->setPixmap(*pixmap);
+            break;
         }
     }
 }

@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1250</width>
-    <height>800</height>
+    <height>799</height>
    </rect>
   </property>
   <property name="font">
@@ -30,30 +30,218 @@
        <number>5</number>
       </property>
       <widget class="QWidget" name="verticalLayoutWidget">
-       <layout class="QVBoxLayout" name="verticalLayout">
-        <item>
+       <layout class="QGridLayout" name="gridLayout_2">
+        <property name="spacing">
+         <number>2</number>
+        </property>
+        <item row="3" column="0">
+         <widget class="QPushButton" name="m_But_CopyAdd">
+          <property name="toolTip">
+           <string>复制增加，支持勾选多行增加</string>
+          </property>
+          <property name="text">
+           <string>上移</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="2">
+         <widget class="QPushButton" name="m_But_Tool">
+          <property name="text">
+           <string>扩展插件</string>
+          </property>
+         </widget>
+        </item>
+        <item row="2" column="0" colspan="3">
+         <widget class="QTableView" name="m_TabVw_HugeSectionData"/>
+        </item>
+        <item row="0" column="0" colspan="3">
          <widget class="QComboBox" name="m_ComBox_HugeSectionName">
           <property name="maxVisibleItems">
            <number>35</number>
           </property>
          </widget>
         </item>
-        <item>
-         <widget class="QTableView" name="m_TabVw_HugeSectionData"/>
+        <item row="3" column="1">
+         <widget class="QPushButton" name="m_But_PitchCopyAdd">
+          <property name="text">
+           <string>下移</string>
+          </property>
+         </widget>
         </item>
        </layout>
       </widget>
       <widget class="QWidget" name="verticalLayoutWidget_2">
-       <layout class="QVBoxLayout" name="verticalLayout_2" stretch="95,5">
-        <item>
+       <layout class="QGridLayout" name="gridLayout_4" rowstretch="95,5" columnstretch="5,95">
+        <property name="spacing">
+         <number>4</number>
+        </property>
+        <item row="1" column="1">
+         <widget class="QScrollArea" name="scrollArea_2">
+          <property name="maximumSize">
+           <size>
+            <width>16777215</width>
+            <height>46</height>
+           </size>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_2">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>820</width>
+             <height>44</height>
+            </rect>
+           </property>
+           <layout class="QGridLayout" name="gridLayout_5">
+            <property name="leftMargin">
+             <number>2</number>
+            </property>
+            <property name="topMargin">
+             <number>2</number>
+            </property>
+            <property name="rightMargin">
+             <number>2</number>
+            </property>
+            <property name="bottomMargin">
+             <number>2</number>
+            </property>
+            <property name="horizontalSpacing">
+             <number>2</number>
+            </property>
+            <property name="verticalSpacing">
+             <number>0</number>
+            </property>
+            <item row="0" column="0">
+             <widget class="QPushButton" name="m_But_UpPage">
+              <property name="minimumSize">
+               <size>
+                <width>27</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>上一页</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="7">
+             <widget class="QPushButton" name="pushButton">
+              <property name="minimumSize">
+               <size>
+                <width>27</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>保存当前页面</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="2">
+             <widget class="QLabel" name="label_2">
+              <property name="text">
+               <string>/</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="5">
+             <spacer name="horizontalSpacer">
+              <property name="orientation">
+               <enum>Qt::Horizontal</enum>
+              </property>
+              <property name="sizeHint" stdset="0">
+               <size>
+                <width>40</width>
+                <height>20</height>
+               </size>
+              </property>
+             </spacer>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLabel" name="m_Label_MinPage">
+              <property name="text">
+               <string>1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="3">
+             <widget class="QLabel" name="m_Label_MaxPage">
+              <property name="text">
+               <string>1</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="4">
+             <widget class="QPushButton" name="m_But_NextPage">
+              <property name="minimumSize">
+               <size>
+                <width>0</width>
+                <height>0</height>
+               </size>
+              </property>
+              <property name="text">
+               <string>下一页</string>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0" colspan="2">
          <widget class="QSplitter" name="m_splitter_z">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::NoFrame</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>2</number>
+          </property>
           <property name="orientation">
            <enum>Qt::Vertical</enum>
+          </property>
+          <property name="handleWidth">
+           <number>5</number>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>true</bool>
           </property>
           <widget class="QWidget" name="verticalLayoutWidget_3">
            <layout class="QVBoxLayout" name="verticalLayout_3">
             <item>
-             <widget class="QTabWidget" name="m_TabWid">
+             <widget class="QTabWidget" name="tabWidget">
+              <property name="sizePolicy">
+               <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                <horstretch>0</horstretch>
+                <verstretch>0</verstretch>
+               </sizepolicy>
+              </property>
               <property name="maximumSize">
                <size>
                 <width>16777215</width>
@@ -63,159 +251,252 @@
               <property name="currentIndex">
                <number>0</number>
               </property>
-              <widget class="QWidget" name="tab">
+              <widget class="QWidget" name="tab_1">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <attribute name="title">
-                <string>过滤搜索</string>
+                <string>搜索/过滤</string>
                </attribute>
-               <layout class="QGridLayout" name="m_GridLayout_Tab_1" columnstretch="5,20,5,20,5,35,5,5">
-                <property name="sizeConstraint">
-                 <enum>QLayout::SetMinAndMaxSize</enum>
-                </property>
-                <property name="leftMargin">
-                 <number>5</number>
-                </property>
-                <property name="topMargin">
-                 <number>5</number>
-                </property>
-                <property name="rightMargin">
-                 <number>5</number>
-                </property>
-                <property name="bottomMargin">
-                 <number>5</number>
-                </property>
+               <layout class="QVBoxLayout" name="verticalLayout_6">
                 <property name="spacing">
                  <number>4</number>
                 </property>
-                <item row="1" column="0">
-                 <widget class="QLabel" name="label_3">
-                  <property name="text">
-                   <string>字段类型：</string>
+                <property name="leftMargin">
+                 <number>4</number>
+                </property>
+                <property name="topMargin">
+                 <number>4</number>
+                </property>
+                <property name="rightMargin">
+                 <number>4</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>4</number>
+                </property>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout_3" columnstretch="5,15,5,15,5,35,10,10">
+                  <property name="spacing">
+                   <number>2</number>
                   </property>
-                 </widget>
-                </item>
-                <item row="0" column="2" colspan="4">
-                 <widget class="QLineEdit" name="m_Edit_Search_Contents"/>
-                </item>
-                <item row="1" column="2">
-                 <widget class="QLabel" name="label_4">
-                  <property name="text">
-                   <string>条件：</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="4">
-                 <widget class="QLabel" name="label_5">
-                  <property name="text">
-                   <string>数值：</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="3">
-                 <widget class="QComboBox" name="m_ComBo_Filter_Condition">
-                  <item>
-                   <property name="text">
-                    <string>等于</string>
-                   </property>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label">
+                    <property name="text">
+                     <string>搜索类型：</string>
+                    </property>
+                   </widget>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>大于</string>
-                   </property>
+                  <item row="2" column="6">
+                   <widget class="QPushButton" name="m_But_Filter">
+                    <property name="text">
+                     <string>过滤</string>
+                    </property>
+                   </widget>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>小于</string>
-                   </property>
+                  <item row="2" column="4">
+                   <widget class="QLabel" name="label_5">
+                    <property name="text">
+                     <string>数值：</string>
+                    </property>
+                   </widget>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>大于等于</string>
-                   </property>
+                  <item row="0" column="2" colspan="4">
+                   <widget class="QLineEdit" name="m_Edit_Search_Contents"/>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>小于等于</string>
-                   </property>
+                  <item row="2" column="2">
+                   <widget class="QLabel" name="label_4">
+                    <property name="text">
+                     <string>条件：</string>
+                    </property>
+                   </widget>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>包含</string>
-                   </property>
+                  <item row="2" column="3">
+                   <widget class="QComboBox" name="m_ComBo_Filter_Condition">
+                    <item>
+                     <property name="text">
+                      <string>等于</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>大于</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>小于</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>大于等于</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>小于等于</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>包含</string>
+                     </property>
+                    </item>
+                   </widget>
                   </item>
-                 </widget>
-                </item>
-                <item row="0" column="6">
-                 <widget class="QPushButton" name="m_But_Search">
-                  <property name="text">
-                   <string>搜索</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="1">
-                 <widget class="QComboBox" name="m_ComBo_Search_Type">
-                  <item>
-                   <property name="text">
-                    <string>按&lt;ID&gt;搜索</string>
-                   </property>
+                  <item row="0" column="6">
+                   <widget class="QPushButton" name="m_But_Search">
+                    <property name="text">
+                     <string>搜索</string>
+                    </property>
+                   </widget>
                   </item>
-                  <item>
-                   <property name="text">
-                    <string>按&lt;名称&gt;搜索</string>
-                   </property>
+                  <item row="2" column="5">
+                   <widget class="QLineEdit" name="m_Edit_Filter_Contents"/>
                   </item>
-                 </widget>
-                </item>
-                <item row="0" column="0">
-                 <widget class="QLabel" name="label">
-                  <property name="text">
-                   <string>搜索类型：</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="1" column="1">
-                 <widget class="QComboBox" name="m_ComBo_Filter_Type"/>
-                </item>
-                <item row="1" column="5">
-                 <widget class="QLineEdit" name="m_Edit_Filter_Contents"/>
-                </item>
-                <item row="1" column="6">
-                 <widget class="QPushButton" name="m_But_Filter">
-                  <property name="text">
-                   <string>过滤</string>
-                  </property>
-                 </widget>
-                </item>
-                <item row="0" column="7" rowspan="2">
-                 <widget class="QPushButton" name="m_But_Search_Reset">
-                  <property name="sizePolicy">
-                   <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
-                    <horstretch>0</horstretch>
-                    <verstretch>0</verstretch>
-                   </sizepolicy>
-                  </property>
-                  <property name="minimumSize">
-                   <size>
-                    <width>0</width>
-                    <height>0</height>
-                   </size>
-                  </property>
-                  <property name="maximumSize">
-                   <size>
-                    <width>16777215</width>
-                    <height>16777215</height>
-                   </size>
-                  </property>
-                  <property name="text">
-                   <string>重置搜索/过滤</string>
-                  </property>
-                 </widget>
+                  <item row="2" column="1">
+                   <widget class="QComboBox" name="m_ComBo_Filter_Type"/>
+                  </item>
+                  <item row="0" column="7" rowspan="3">
+                   <widget class="QPushButton" name="m_But_Search_Reset">
+                    <property name="sizePolicy">
+                     <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                      <horstretch>0</horstretch>
+                      <verstretch>0</verstretch>
+                     </sizepolicy>
+                    </property>
+                    <property name="minimumSize">
+                     <size>
+                      <width>0</width>
+                      <height>0</height>
+                     </size>
+                    </property>
+                    <property name="maximumSize">
+                     <size>
+                      <width>16777215</width>
+                      <height>16777215</height>
+                     </size>
+                    </property>
+                    <property name="text">
+                     <string>重置搜索/过滤</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="m_ComBo_Search_Type">
+                    <item>
+                     <property name="text">
+                      <string>按&lt;ID&gt;搜索</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>按&lt;名称&gt;搜索</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="2" column="0">
+                   <widget class="QLabel" name="label_3">
+                    <property name="text">
+                     <string>字段类型：</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
                 </item>
                </layout>
               </widget>
               <widget class="QWidget" name="tab_2">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="maximumSize">
+                <size>
+                 <width>16777215</width>
+                 <height>16777215</height>
+                </size>
+               </property>
                <attribute name="title">
                 <string>全局搜索</string>
                </attribute>
+               <layout class="QVBoxLayout" name="verticalLayout_5">
+                <property name="spacing">
+                 <number>4</number>
+                </property>
+                <property name="leftMargin">
+                 <number>4</number>
+                </property>
+                <property name="topMargin">
+                 <number>4</number>
+                </property>
+                <property name="rightMargin">
+                 <number>4</number>
+                </property>
+                <property name="bottomMargin">
+                 <number>4</number>
+                </property>
+                <item>
+                 <layout class="QGridLayout" name="gridLayout">
+                  <property name="spacing">
+                   <number>2</number>
+                  </property>
+                  <item row="0" column="2">
+                   <widget class="QLineEdit" name="m_Edit_Search_Contents_All"/>
+                  </item>
+                  <item row="0" column="3">
+                   <widget class="QPushButton" name="m_But_Search_All">
+                    <property name="text">
+                     <string>全局搜索</string>
+                    </property>
+                   </widget>
+                  </item>
+                  <item row="0" column="1">
+                   <widget class="QComboBox" name="m_ComBo_Search_Type_All">
+                    <item>
+                     <property name="text">
+                      <string>按&lt;全局_ID&gt;搜索</string>
+                     </property>
+                    </item>
+                    <item>
+                     <property name="text">
+                      <string>按&lt;全局_名称&gt;搜索</string>
+                     </property>
+                    </item>
+                   </widget>
+                  </item>
+                  <item row="0" column="0">
+                   <widget class="QLabel" name="label_6">
+                    <property name="text">
+                     <string>全局搜索类型：</string>
+                    </property>
+                   </widget>
+                  </item>
+                 </layout>
+                </item>
+                <item>
+                 <widget class="QTableView" name="m_TabVw_Search_All"/>
+                </item>
+                <item>
+                 <widget class="QLabel" name="label_7">
+                  <property name="text">
+                   <string>查询数量：</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
               </widget>
              </widget>
             </item>
@@ -238,73 +519,64 @@
           </widget>
          </widget>
         </item>
-        <item>
-         <layout class="QHBoxLayout" name="horizontalLayout_2" stretch="5,2,2,2,5,70,16">
-          <item>
-           <widget class="QPushButton" name="m_But_UpPage">
-            <property name="text">
-             <string>上一页</string>
+        <item row="1" column="0">
+         <widget class="QScrollArea" name="scrollArea_3">
+          <property name="maximumSize">
+           <size>
+            <width>46</width>
+            <height>46</height>
+           </size>
+          </property>
+          <property name="verticalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="horizontalScrollBarPolicy">
+           <enum>Qt::ScrollBarAlwaysOff</enum>
+          </property>
+          <property name="widgetResizable">
+           <bool>true</bool>
+          </property>
+          <widget class="QWidget" name="scrollAreaWidgetContents_3">
+           <property name="geometry">
+            <rect>
+             <x>0</x>
+             <y>0</y>
+             <width>44</width>
+             <height>44</height>
+            </rect>
+           </property>
+           <layout class="QVBoxLayout" name="verticalLayout">
+            <property name="spacing">
+             <number>0</number>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="m_Label_MinPage">
-            <property name="text">
-             <string>1</string>
+            <property name="leftMargin">
+             <number>2</number>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+            <property name="topMargin">
+             <number>2</number>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>/</string>
+            <property name="rightMargin">
+             <number>2</number>
             </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
+            <property name="bottomMargin">
+             <number>2</number>
             </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QLabel" name="m_Label_MaxPage">
-            <property name="text">
-             <string>1</string>
-            </property>
-            <property name="alignment">
-             <set>Qt::AlignCenter</set>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <widget class="QPushButton" name="m_But_NextPage">
-            <property name="text">
-             <string>下一页</string>
-            </property>
-           </widget>
-          </item>
-          <item>
-           <spacer name="horizontalSpacer">
-            <property name="orientation">
-             <enum>Qt::Horizontal</enum>
-            </property>
-            <property name="sizeHint" stdset="0">
-             <size>
-              <width>40</width>
-              <height>20</height>
-             </size>
-            </property>
-           </spacer>
-          </item>
-          <item>
-           <widget class="QPushButton" name="pushButton">
-            <property name="text">
-             <string>保存当前页面</string>
-            </property>
-           </widget>
-          </item>
-         </layout>
+            <item>
+             <widget class="QLabel" name="m_Label_Itemicon">
+              <property name="maximumSize">
+               <size>
+                <width>16777215</width>
+                <height>16777215</height>
+               </size>
+              </property>
+              <property name="text">
+               <string/>
+              </property>
+             </widget>
+            </item>
+           </layout>
+          </widget>
+         </widget>
         </item>
        </layout>
       </widget>

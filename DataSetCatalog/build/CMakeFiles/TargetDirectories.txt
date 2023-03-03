@@ -1,3 +1,0 @@
-E:/Vscode_elementsEdit/elements/DataSetCatalog/build/CMakeFiles/DataSetCatalog.dir
-E:/Vscode_elementsEdit/elements/DataSetCatalog/build/CMakeFiles/ALL_BUILD.dir
-E:/Vscode_elementsEdit/elements/DataSetCatalog/build/CMakeFiles/ZERO_CHECK.dir

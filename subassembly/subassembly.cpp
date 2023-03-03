@@ -191,6 +191,30 @@ void subassembly::setSubassembly(QString LableText, QString EditText, QString La
         ui->m_GridLayout->setSpacing(3);
 
         break;
+    case 4:
+        combo_but_Flag = 4;
+        m_TypeWindow.m_Lable = new QLabel(this);
+        m_TypeWindow.m_Edit = new QLineEdit(this);
+        m_TypeWindow.m_Lable2 = new QLabel(this);
+
+        m_TypeWindow.m_Lable->setAlignment(Qt::AlignRight | Qt::AlignVCenter);
+        m_TypeWindow.m_Lable->setFixedSize(90, 22);
+        m_TypeWindow.m_Edit->setFixedSize(100, 22);
+        m_TypeWindow.m_Lable2->setFixedSize(22, 22);
+
+        elideNote = fontWidth.elidedText(LableText, Qt::ElideRight, 115); // 最大宽度150像素
+
+        m_TypeWindow.m_Lable->setText(elideNote);
+        m_TypeWindow.m_Lable->setToolTip(LableText);
+        m_TypeWindow.m_Edit->setText(EditText);
+
+        ui->m_GridLayout->addWidget(m_TypeWindow.m_Lable, 0, 0);
+        ui->m_GridLayout->addWidget(m_TypeWindow.m_Edit, 0, 1);
+        ui->m_GridLayout->addWidget(m_TypeWindow.m_Lable2, 0, 2);
+        ui->m_GridLayout->setSpacing(3);
+        ui->m_GridLayout->setAlignment(m_TypeWindow.m_Lable2, Qt::AlignLeft | Qt::AlignVCenter);
+
+        break;
     }
 }
 
@@ -198,6 +222,11 @@ int subassembly::AddUpWidget(QString name, QStringList &list)
 {
     QSettings *sett = new QSettings("data\\verWidget.ini", QSettings::IniFormat);
     QStringList List;
+    if (name == "显示图标")
+    {
+        sett->endGroup();
+        return 4;
+    }
     if (name.indexOf("是否") != -1)
     {
         list.append("0-否");
@@ -205,6 +234,7 @@ int subassembly::AddUpWidget(QString name, QStringList &list)
         sett->endGroup();
         return 3;
     }
+
     if (name.indexOf("名称") != -1 || name.indexOf("描述") != -1)
     {
         sett->endGroup();
@@ -222,14 +252,12 @@ int subassembly::AddUpWidget(QString name, QStringList &list)
         sett->endGroup();
         return 2;
     }
-
     if (sett->contains("combo/" + name))
     {
         list = sett->value("combo/" + name).toString().split("；");
         sett->endGroup();
         return 3;
     }
-
     sett->endGroup();
     return 1;
 }

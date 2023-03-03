@@ -26,19 +26,6 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    union el_data
-    {
-        int int_val;
-        float float_val;
-        double double_val;
-        wchar_t wchar_val[512];
-        char char_val[1024];
-        uint uint_val;
-        bool bool_val;
-        __time32_t time_val;
-        int64_t int64_val;
-        uint64_t uint64_val;
-    };
 
 private slots:
     // 大段ComboBox名称改变时，刷新小段ComboBox名称
@@ -64,13 +51,22 @@ private slots:
     // 过滤按钮槽函数
     void on_m_But_Filter_clicked();
     // 单击TAB切换页面
-    void on_m_TabWid_currentChanged(int index);
+    void on_tabWidget_currentChanged(int index);
+    // 全局搜索按钮槽函数
+    void on_m_But_Search_All_clicked();
+    // 双击全局搜索Tableview 显示数据
+    void on_m_TabVw_Search_All_doubleClicked(const QModelIndex &index);
+    // 主Tableview右键菜单响应函数
+    void slotContextMenu(QPoint pos);
+    // 单击菜单项响应函数
+    void slotMenu_triggered();
 
 private:
     Ui::MainWindow *ui;
     DataSetCatalog My_Data;
-    QStandardItemModel *model_Search;
+    QStandardItemModel *model_Search_All;
     QList<subassembly *> m_subassemblyList;
+    QMenu *m_popMenu; // 右键菜单
     el_data m_Eldata;
     int m_ComBoxIndex = 0;
 
